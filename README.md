@@ -62,4 +62,4 @@ from scipy.spatial.distance import squareform
 
 p = squareform(np.load('models/mouse/p_model_k.npy'))
 ```
-
+There, '''p[i,j]''' correpo
