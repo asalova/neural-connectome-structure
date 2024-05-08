@@ -4,7 +4,7 @@ Repository for the manuscript "Combined topological and spatial constraints are 
 The folders titled *_data (where * is fly, mouse, and human) contain the processed individual neuron information and connectome/contactome structure.
 Below is a brief summary of the columns of the .csv files contained in each of these folders.
 
-# Summary of processed data
+# **Summary of processed data**
 
 ## Neuron information
 
