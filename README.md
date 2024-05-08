@@ -54,6 +54,16 @@ Here, each row corresponds to a pair of neurons in physical contact <br />
 **j** : neuron index <br />
 
 # Summary of models
+We include the edge probabilities obtained for each model discussed in the manuscript (ER, model_c, model_d, model_d_c, model_k, model_k_c, model k_L) as .npy files in models/*.zip, where * is fly, mouse, and human.  <br />
+As an example of getting edge probabilities in Python: <br />
+```python
+import numpy as np
+from scipy.spatial.distance import squareform
 
+p = squareform(np.load('models/mouse/p_model_k.npy'))
+```
+There, `p[i,j]` corresponds to the probability of forming an edge between neurons i and j. <br />
 
+# Example code for models 
+We include the example code to obtain edge probabilities for models **k**/**k+c**—model_k.py—and **k+L**—model_k_L.py. Note that the attached code can be used to impose any hard edge constraint.
 
