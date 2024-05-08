@@ -65,5 +65,5 @@ p = squareform(np.load('models/mouse/p_model_k.npy'))
 There, `p[i,j]` corresponds to the probability of forming an edge between neurons i and j. <br />
 
 # Example code for models 
-We include the example code to obtain edge probabilities for models **k**/**k+c**---.py--- and **k+L**---.py---. Note that any hard edge constraint can be imposed using the attached code.
+We include the example code to obtain edge probabilities for models **k**/**k+c**—model_k.py—and **k+L**—model_k_L.py. Note that the attached code can be used to impose any hard edge constraint.
 
