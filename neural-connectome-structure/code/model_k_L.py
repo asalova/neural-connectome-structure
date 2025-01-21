@@ -24,7 +24,7 @@ exp_params['human_all'] = 9.985
 exp_param = exp_params[name]
 
 # Loading neuron-level information
-somas = pandas.read_cs­v(f'{name}_data/{name}_extended_neuron_info.csv')
+somas = pandas.read_csÂ­v(f'{name}_data/{name}_extended_neuron_info.csv')
 # Loading the undirected unweighted synaptic network (connectome)
 syn_undir = pandas.read_csv(f'{name}_data/{name}_weighted_connectome.csv')
 
@@ -88,7 +88,6 @@ def degree_preserving_rand(A_c, deg_dist, is_conn, D, exp_param, tol=1e-2, max_i
     alphas_opt = lagrange_mult_degree_preserving_rand(deg_dist, A_c, size, D_exp, tol, max_iter, check_timestep)
     alphas = np.zeros(n)
     alphas[is_conn] = alphas_opt[:,0]
-    np.save(save_name_alphas, alphas)
 
     alphas = np.expand_dims(alphas, 1)
     probs_mat = A_cont/(1 + np.exp(exp_param * squareform(D)) * (alphas @ alphas.T))
@@ -96,7 +95,7 @@ def degree_preserving_rand(A_c, deg_dist, is_conn, D, exp_param, tol=1e-2, max_i
     probs_mat[:, not_conn] = 0
     probs_arr = squareform(probs_mat)
                 
-    np.save(save_name_p, probs_arr)  
+    return alphas, probs_arr
 
 def lagrange_mult_degree_preserving_rand(deg_dist, A, size, D_exp, tol, max_iter, check_timestep=10):
     '''
